@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shahinsha P S | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+  --bg-dark: #0f172a;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-light: #e5e7eb;
+  --primary: #38bdf8;
+  --card-dark: #1e293b;
+  --card-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-light);
+  transition: 0.4s ease;
+  line-height: 1.6;
+
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a, #0ea5e9);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+body.light {
+  background: #f8fafc;   /* Light background */
+  color: var(--text-dark);
+  animation: none;       /* Stop gradient animation */
+}
+
+body.light header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+body.light .card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 5rem 0;
+}
+
+h1, h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(15px);
+  padding: 1.2rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+nav a {
+  margin-left: 1.2rem;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.toggle-btn {
+  margin-left: 1.2rem;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+body.light .card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  opacity: 0.85;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* ✅ Certificate Image Proper Size */
+.certificate-img {
+  max-width: 300px;      /* Controls size */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  opacity: 0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Shahinsha P S</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+    <button class="toggle-btn" onclick="toggleMode()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Hello, I'm <span>Shahinsha P S</span></h1>
+    <p>System Administrator | Linux | Web Hosting | Server Management</p>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2>About Me</h2>
+  <p style="opacity:0.8;">
+    “I focus on managing and securing  systems and servers to ensure consistent performance, reliability, and operational excellence.”
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <p>
+        Computer Science and Engineering graduate with hands-on experience in  system administration,
+        server configuration and web hosting technologies.
+      </p>
+    </div>
+
+   <div class="card">
+  <h3>What Defines Me</h3>
+  <ul style="list-style: none; padding-left: 0; line-height: 2;">
+    <li>🖥️ Linux System Administration</li>
+    <li>🗄️ Server Management</li>
+    <li>🌐 Web Hosting</li>
+    <li>⚙️ Python & Bash Scripting</li>
+  </ul>
+</div>
+
+</section>
+
+<section id="skills" class="container">
+  <h2>Technical Expertise</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Linux System Administration</h3>
+      <p>User management, permissions, SSH, systemctl, yum/dnf and troubleshooting.</p>
+    </div>
+
+    <div class="card">
+      <h3>Python & Bash Scripting</h3>
+      <p>Automation scripts, cron jobs and server task automation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Server Management</h3>
+      <p>Apache & Nginx configuration, virtual hosts and SSL setup.</p>
+    </div>
+
+    <div class="card">
+      <h3>Web Hosting & Deployment</h3>
+      <p>Domain configuration, DNS basics and live production deployment.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Apache Server Installation</h3>
+      <img src="images/apache.png">
+    </div>
+
+    <div class="card">
+      <h3>Nginx Deployment</h3>
+      <img src="images/nginx.png">
+    </div>
+
+    <div class="card">
+      <h3>WordPress Deployment</h3>
+      <img src="images/sha7.png">
+    </div>
+
+    <div class="card">
+      <h3>phpMyAdmin Configuration</h3>
+      <img src="images/shaphp.png">
+    </div>
+
+    <div class="card">
+      <h3>Subdomain Configuration & Hosting Deployment</h3>
+      <img src="images/seven01.png">
+    </div>
+
+    <div class="card">
+      <h3>Website Access Control & Security Configuration</h3>
+      <img src="images/userprotection.png">
+    </div>
+
+    <div class="card">
+      <h3>PHP Environment Installation & Server Integration</h3>
+      <img src="images/task02.png">
+    </div>
+
+  </div>
+</section>
+
+<section id="certifications" class="container">
+  <h2>Certifications</h2>
+
+  <div class="card">
+    <h3>cPanel Professional Certification</h3>
+    <img src="images/cert.png" class="certificate-img">
+  </div>
+
+</section>
+
+<section id="contact" class="container">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:shahinmsd007@gmail.com">shahinmsd007@gmail.com</a></p>
+   <p>LinkedIn: <a href="https://www.linkedin.com/in/shahinsha-p-s-b81904357" target="_blank">Shahinsha P S</a></p>
+</section>
+
+<footer>© 2026 Shahinsha P S</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
